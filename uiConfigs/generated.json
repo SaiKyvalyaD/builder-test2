@@ -4,7 +4,7 @@
     "contact-form": {
       "type": "Card",
       "props": {
-        "title": "Contact Form"
+        "title": "Contact Details Form"
       },
       "children": [
         "name-label",
