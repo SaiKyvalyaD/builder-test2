@@ -1,0 +1,141 @@
+{
+  "root": "signup-form",
+  "elements": {
+    "signup-form": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": 16
+      },
+      "children": [
+        "header",
+        "form-container"
+      ]
+    },
+    "header": {
+      "type": "Text",
+      "props": {
+        "content": "Sign Up"
+      },
+      "children": []
+    },
+    "form-container": {
+      "type": "Card",
+      "props": {},
+      "children": [
+        "form"
+      ]
+    },
+    "form": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": 16
+      },
+      "children": [
+        "name-field",
+        "email-field",
+        "password-field",
+        "submit-button"
+      ]
+    },
+    "name-field": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": 4
+      },
+      "children": [
+        "name-label",
+        "name-input"
+      ]
+    },
+    "name-label": {
+      "type": "Label",
+      "props": {
+        "content": "Full Name",
+        "htmlFor": "name"
+      },
+      "children": []
+    },
+    "name-input": {
+      "type": "Input",
+      "props": {
+        "placeholder": "Enter your name",
+        "type": "text"
+      },
+      "children": []
+    },
+    "email-field": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": 4
+      },
+      "children": [
+        "email-label",
+        "email-input"
+      ]
+    },
+    "email-label": {
+      "type": "Label",
+      "props": {
+        "content": "Email",
+        "htmlFor": "email"
+      },
+      "children": []
+    },
+    "email-input": {
+      "type": "Input",
+      "props": {
+        "placeholder": "Enter your email",
+        "type": "email"
+      },
+      "children": []
+    },
+    "password-field": {
+      "type": "Stack",
+      "props": {
+        "direction": "vertical",
+        "gap": 4
+      },
+      "children": [
+        "password-label",
+        "password-input"
+      ]
+    },
+    "password-label": {
+      "type": "Label",
+      "props": {
+        "content": "Password",
+        "htmlFor": "password"
+      },
+      "children": []
+    },
+    "password-input": {
+      "type": "Input",
+      "props": {
+        "placeholder": "Enter your password",
+        "type": "password"
+      },
+      "children": []
+    },
+    "submit-button": {
+      "type": "Button",
+      "props": {
+        "label": "Sign Up",
+        "variant": "default"
+      },
+      "on": {
+        "press": {
+          "action": "setState",
+          "params": {
+            "statePath": "/formSubmitted",
+            "value": true
+          }
+        }
+      },
+      "children": []
+    }
+  }
+}

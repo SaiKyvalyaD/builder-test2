@@ -1,0 +1,107 @@
+{
+  "triggerType": "httpTrigger",
+  "name": "Sync Data Workflow",
+  "version": 1,
+  "data": {
+    "nodes": [
+      {
+        "id": "trigger_1",
+        "type": "httpTrigger",
+        "name": "HTTP Trigger",
+        "data": {
+          "method": "POST",
+          "label": "Trigger",
+          "authentication": "none"
+        },
+        "position": {
+          "x": 0,
+          "y": 0
+        },
+        "measured": {
+          "width": 166,
+          "height": 101
+        }
+      },
+      {
+        "id": "httpRequest_1",
+        "type": "httpRequest",
+        "name": "Fetch Data from API",
+        "data": {
+          "url": "https://api.example.com/data",
+          "method": "GET"
+        },
+        "position": {
+          "x": 260,
+          "y": 150
+        },
+        "measured": {
+          "width": 222,
+          "height": 80
+        }
+      },
+      {
+        "id": "serviceCall_1",
+        "type": "serviceCall",
+        "name": "Process Data",
+        "data": {
+          "serviceUrl": "https://internal.service/process",
+          "method": "POST",
+          "path": "/"
+        },
+        "position": {
+          "x": 520,
+          "y": 0
+        },
+        "measured": {
+          "width": 178,
+          "height": 101
+        }
+      },
+      {
+        "id": "merge_1",
+        "type": "merge",
+        "name": "Merge Results",
+        "data": {
+          "inputCount": 2,
+          "mergeType": "default"
+        },
+        "position": {
+          "x": 780,
+          "y": 150
+        },
+        "measured": {
+          "width": 170,
+          "height": 80
+        }
+      }
+    ],
+    "edges": [
+      {
+        "source": "trigger_1",
+        "target": "httpRequest_1",
+        "id": "xy_edge__trigger_1_httpRequest_1_1",
+        "type": "default"
+      },
+      {
+        "source": "httpRequest_1",
+        "target": "serviceCall_1",
+        "id": "xy_edge__httpRequest_1_serviceCall_1_2",
+        "type": "default"
+      },
+      {
+        "source": "serviceCall_1",
+        "target": "merge_1",
+        "id": "xy_edge__serviceCall_1_merge_1_3",
+        "targetHandle": "input-0",
+        "type": "default"
+      },
+      {
+        "source": "httpRequest_1",
+        "target": "merge_1",
+        "id": "xy_edge__httpRequest_1_merge_1_4",
+        "targetHandle": "input-1",
+        "type": "default"
+      }
+    ]
+  }
+}

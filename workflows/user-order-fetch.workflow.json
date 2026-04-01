@@ -1,0 +1,137 @@
+{
+  "triggerType": "httpTrigger",
+  "name": "User and Order Fetch Workflow",
+  "version": 1,
+  "data": {
+    "nodes": [
+      {
+        "id": "trigger_1",
+        "type": "httpTrigger",
+        "name": "HTTP Trigger",
+        "position": {
+          "x": 36.46746987951808,
+          "y": 49.15421686746987
+        },
+        "data": {
+          "method": "GET",
+          "label": "Trigger",
+          "authentication": "none"
+        },
+        "measured": {
+          "width": 166,
+          "height": 101
+        },
+        "selected": false,
+        "dragging": false
+      },
+      {
+        "id": "httpRequest_1",
+        "type": "httpRequest",
+        "service": "userService",
+        "name": "Fetch User Data",
+        "position": {
+          "x": 250,
+          "y": 50
+        },
+        "data": {
+          "method": "POST",
+          "url": ""
+        },
+        "measured": {
+          "width": 178,
+          "height": 80
+        }
+      },
+      {
+        "id": "httpRequest_2",
+        "type": "httpRequest",
+        "service": "orderService",
+        "name": "Fetch Order Data",
+        "position": {
+          "x": 250,
+          "y": 150
+        },
+        "data": {
+          "method": "POST",
+          "url": ""
+        },
+        "measured": {
+          "width": 178,
+          "height": 80
+        }
+      },
+      {
+        "id": "merge_1",
+        "type": "merge",
+        "name": "Merge User and Order Data",
+        "position": {
+          "x": 488.8072289156627,
+          "y": 40.79518072289157
+        },
+        "data": {
+          "inputCount": 2,
+          "mergeType": "default"
+        },
+        "measured": {
+          "width": 170,
+          "height": 80
+        },
+        "selected": false,
+        "dragging": false
+      },
+      {
+        "id": "serviceCall_1",
+        "type": "serviceCall",
+        "name": "Process Merged Data",
+        "position": {
+          "x": 659.1060240963857,
+          "y": 138.06024096385545
+        },
+        "data": {
+          "method": "GET",
+          "path": "/"
+        },
+        "measured": {
+          "width": 178,
+          "height": 101
+        },
+        "selected": false,
+        "dragging": false
+      }
+    ],
+    "edges": [
+      {
+        "source": "trigger_1",
+        "target": "httpRequest_1",
+        "id": "xy_edge__trigger_1_httpRequest_1_1",
+        "type": "default"
+      },
+      {
+        "source": "trigger_1",
+        "target": "httpRequest_2",
+        "id": "xy_edge__trigger_1_httpRequest_2_2",
+        "type": "default"
+      },
+      {
+        "source": "httpRequest_1",
+        "target": "merge_1",
+        "id": "xy_edge__httpRequest_1_merge_1_3",
+        "targetHandle": "input-0",
+        "type": "default"
+      },
+      {
+        "source": "httpRequest_2",
+        "target": "merge_1",
+        "id": "xy_edge__httpRequest_2_merge_1_4",
+        "targetHandle": "input-1",
+        "type": "default"
+      },
+      {
+        "source": "merge_1",
+        "target": "serviceCall_1",
+        "id": "xy_edge__merge_1_serviceCall_1_5",
+        "type": "default"
+      }
+    ]
+  }
+}
