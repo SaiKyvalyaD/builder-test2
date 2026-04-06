@@ -18,8 +18,8 @@
           "authentication": "none"
         },
         "measured": {
-          "width": 166,
-          "height": 101
+          "width": 142,
+          "height": 93
         },
         "selected": false,
         "dragging": false
@@ -38,8 +38,8 @@
           "url": ""
         },
         "measured": {
-          "width": 178,
-          "height": 80
+          "width": 150,
+          "height": 72
         }
       },
       {
@@ -56,8 +56,8 @@
           "url": ""
         },
         "measured": {
-          "width": 178,
-          "height": 80
+          "width": 150,
+          "height": 72
         }
       },
       {
@@ -73,8 +73,8 @@
           "mergeType": "default"
         },
         "measured": {
-          "width": 170,
-          "height": 80
+          "width": 156,
+          "height": 72
         },
         "selected": false,
         "dragging": false
@@ -92,8 +92,8 @@
           "path": "/"
         },
         "measured": {
-          "width": 178,
-          "height": 101
+          "width": 150,
+          "height": 93
         },
         "selected": false,
         "dragging": false

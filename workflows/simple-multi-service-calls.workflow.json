@@ -1,0 +1,78 @@
+{
+  "triggerType": "httpTrigger",
+  "name": "Simple Multi Service Calls",
+  "version": 1,
+  "data": {
+    "nodes": [
+      {
+        "id": "1",
+        "type": "httpTrigger",
+        "position": {
+          "x": -244,
+          "y": 18.66666666666667
+        },
+        "data": {
+          "method": "GET",
+          "label": "Start Trigger",
+          "authentication": "none"
+        },
+        "measured": {
+          "width": 142,
+          "height": 93
+        },
+        "selected": false,
+        "dragging": false
+      },
+      {
+        "id": "2",
+        "type": "serviceCall",
+        "position": {
+          "x": 22.222222222222207,
+          "y": 33.33333333333334
+        },
+        "data": {
+          "method": "POST",
+          "path": "/service1"
+        },
+        "measured": {
+          "width": 150,
+          "height": 93
+        },
+        "selected": false,
+        "dragging": false
+      },
+      {
+        "id": "3",
+        "type": "serviceCall",
+        "position": {
+          "x": 304.16666666666663,
+          "y": 33.77777777777777
+        },
+        "data": {
+          "method": "POST",
+          "path": "/service2"
+        },
+        "measured": {
+          "width": 150,
+          "height": 93
+        },
+        "selected": false,
+        "dragging": false
+      }
+    ],
+    "edges": [
+      {
+        "id": "edge1",
+        "source": "1",
+        "target": "2",
+        "type": "default"
+      },
+      {
+        "id": "edge2",
+        "source": "2",
+        "target": "3",
+        "type": "default"
+      }
+    ]
+  }
+}

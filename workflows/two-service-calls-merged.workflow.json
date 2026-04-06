@@ -1,0 +1,76 @@
+{
+  "triggerType": "httpTrigger",
+  "name": "Two Service Calls Merged",
+  "version": 1,
+  "data": {
+    "nodes": [
+      {
+        "id": "node_1",
+        "type": "serviceCall",
+        "position": {
+          "x": 100,
+          "y": 100
+        },
+        "data": {
+          "method": "GET",
+          "path": "/api/service1"
+        },
+        "measured": {
+          "width": 150,
+          "height": 93
+        },
+        "selected": false
+      },
+      {
+        "id": "node_2",
+        "type": "serviceCall",
+        "position": {
+          "x": 100,
+          "y": 200
+        },
+        "data": {
+          "method": "GET",
+          "path": "/api/service2"
+        },
+        "measured": {
+          "width": 150,
+          "height": 93
+        },
+        "selected": false
+      },
+      {
+        "id": "merge_1",
+        "type": "merge",
+        "position": {
+          "x": 300,
+          "y": 150
+        },
+        "data": {
+          "inputCount": 2,
+          "mergeType": "join"
+        },
+        "measured": {
+          "width": 156,
+          "height": 72
+        },
+        "selected": false
+      }
+    ],
+    "edges": [
+      {
+        "id": "edge_1",
+        "source": "node_1",
+        "target": "merge_1",
+        "targetHandle": "input-0",
+        "type": "default"
+      },
+      {
+        "id": "edge_2",
+        "source": "node_2",
+        "target": "merge_1",
+        "targetHandle": "input-1",
+        "type": "default"
+      }
+    ]
+  }
+}

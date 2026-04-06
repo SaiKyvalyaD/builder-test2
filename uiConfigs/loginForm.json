@@ -1,0 +1,70 @@
+{
+  "root": "login-form",
+  "elements": {
+    "login-form": {
+      "type": "Card",
+      "props": {
+        "title": "Login",
+        "description": "Enter your credentials"
+      },
+      "children": [
+        "username-input",
+        "password-input",
+        "submit-button"
+      ]
+    },
+    "username-input": {
+      "type": "Input",
+      "props": {
+        "placeholder": "Username"
+      },
+      "on": {
+        "change": {
+          "action": "setState",
+          "params": {
+            "statePath": "/form/username",
+            "value": {
+              "$state": "/form/username"
+            }
+          }
+        }
+      },
+      "children": []
+    },
+    "password-input": {
+      "type": "Input",
+      "props": {
+        "placeholder": "Password",
+        "type": "password"
+      },
+      "on": {
+        "change": {
+          "action": "setState",
+          "params": {
+            "statePath": "/form/password",
+            "value": {
+              "$state": "/form/password"
+            }
+          }
+        }
+      },
+      "children": []
+    },
+    "submit-button": {
+      "type": "Button",
+      "props": {
+        "label": "Login"
+      },
+      "on": {
+        "press": {
+          "action": "setState",
+          "params": {
+            "statePath": "/form/status",
+            "value": "submitted"
+          }
+        }
+      },
+      "children": []
+    }
+  }
+}
